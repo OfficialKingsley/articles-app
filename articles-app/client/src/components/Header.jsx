@@ -1,15 +1,17 @@
 /** @format */
 
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
+import { useNavigate, NavLink } from "react-router-dom";
 
 const Header = () => {
-    const { user } = useContext(UserContext);
+    const [user, setUser] = useState({});
+
     return (
         <header className="header">
             <div className="header-container">
-                <h1>Memories</h1>
+                <h1>Articles</h1>
                 <div className="hamburger">
                     <span></span>
                     <span></span>
@@ -17,14 +19,14 @@ const Header = () => {
                 </div>
                 <nav>
                     <ul>
-                        {user._id ? (
+                        {user.isLoggedIn ? (
                             <li>
-                                <Link to={"/"}>Home</Link>
+                                <NavLink to={"/users/login"}>Logout</NavLink>
                             </li>
                         ) : (
                             <>
                                 <li>
-                                    <Link to={"/users/login"}>Login</Link>
+                                    <NavLink to={"/users/login"}>Login</NavLink>
                                 </li>
                             </>
                         )}

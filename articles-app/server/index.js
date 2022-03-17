@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 
 //
 import userRoute from "./routes/user.js";
+import loginRoute from "./routes/login.js";
 
 //Init express
 const app = express();
@@ -18,6 +19,8 @@ app.use(cors());
 
 //Setting up routes
 app.use("/", userRoute);
+app.use("/login", loginRoute);
+
 mongoose.connect("mongodb://localhost:27017/articlesdb");
 const connection = mongoose.connection;
 connection.once("open", () => {
