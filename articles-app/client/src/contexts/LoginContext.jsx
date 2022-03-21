@@ -6,23 +6,28 @@ import { UserContext } from "./UserContext";
 export const LoginContext = createContext();
 
 const LoginContextProvider = ({ children }) => {
-  const { getUser, makeUser } = useContext(UserContext);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  async function loginUser(username, password, navigate) {
+  const { getUser, setCurrentUser, updateLoggedIn } = useContext(UserContext);
+
+  async function login(username, password, navigate) {
     const user = await getUser(username);
     if (!user) {
       alert("There is no user with that username");
     } else if (user && user.password !== password) {
       alert("Wrong Password please try again");
     } else {
-      makeUser(user);
-      setIsLoggedIn(true);
+      updateLoggedIn(username, password, true);
+      setCurrentUser(user);
       navigate(`/${username}`);
     }
   }
+  const logout = (username, password, navigate) => {
+    updateLoggedIn(username, password, false);
+    setCurrentUser({});
+    navigate("/");
+  };
 
   return (
-    <LoginContext.Provider value={{ loginUser, isLoggedIn }}>
+    <LoginContext.Provider value={{ login, logout }}>
       <>{children}</>
     </LoginContext.Provider>
   );
