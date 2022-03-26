@@ -1,31 +1,29 @@
 {
-    "name": "articles-server",
-    "version": "1.0.0",
-    "description": "This is the server for my ",
-    "main": "index.js",
-    "type": "module",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon index.js"
-    },
-    "author": "Kingsley Ihemelandu",
-    "license": "ISC",
-    "dependencies": {
-        "bcryptjs": "^2.4.3",
-        "body-parser": "^1.19.2",
-        "connect-flash": "^0.1.1",
-        "cors": "^2.8.5",
-        "express": "^4.17.3",
-        "express-messages": "^1.0.1",
-        "express-session": "^1.17.2",
-        "express-validator": "^6.14.0",
-        "handlebars": "^4.7.7",
-        "moment": "^2.29.1",
-        "mongo-morgan": "^2.0.3",
-        "mongoose": "^6.2.4",
-        "nodemon": "^2.0.15",
-        "passport": "^0.5.2",
-        "passport-local": "^1.0.0",
-        "pug": "^3.0.2"
-    }
+  "name": "articles-server",
+  "version": "1.0.0",
+  "description": "This is the server for my articles app",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Kingsley Ihemelandu",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "moment": "^2.29.1",
+    "mongoose": "^6.2.4",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.2"
+  }
 }
