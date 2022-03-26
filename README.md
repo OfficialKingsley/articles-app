@@ -1,4 +1,4 @@
-# articles-app
+# Articles App
 
 ## Features
   - Has login
@@ -8,3 +8,9 @@
   - General Homepage
   - Specific Homepage
   - Responsiveness 🤣🤣🤣 (I'm terrible at styling)
+
+## Tools used
+  - ### React
+    - React Hooks
+    - React Routing
+  - ### Node and Express
