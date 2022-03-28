@@ -13,6 +13,7 @@ import Register from "./routes/Register";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./components/styles/Globals.styled";
 import { useState } from "react";
+import AllArticles from "./routes/AllArticles";
 
 const App = () => {
   const [navIsOpen, setNavIsOpen] = useState(false);
@@ -31,6 +32,7 @@ const App = () => {
             <Route path="/:username/articles" element={<Articles />} />
             <Route path="/:username/articles/:id" element={<Article />} />
             <Route path="/:username/articles/add" element={<AddArticle />} />
+            <Route path="/articles" element={<AllArticles />} />
           </Routes>
         </div>
       </ThemeProvider>

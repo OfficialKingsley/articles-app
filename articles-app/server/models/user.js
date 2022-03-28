@@ -27,10 +27,18 @@ export const userSchema = new Schema({
 
 const User = model("User", userSchema);
 
+const findAUser = async (username) => {
+  await User.find({ username }, (err, userArray) => {
+    if (err) {
+    } else {
+      return userArray[0];
+    }
+  });
+};
 export const findUser = (username, res) => {
   User.find({ username }, (err, userArray) => {
     if (err) {
-      console.log(err);
+      res.status(400);
     } else {
       res.status(200).json(userArray[0]);
     }

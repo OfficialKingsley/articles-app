@@ -16,7 +16,7 @@ router.get("/", getUser);
 router.get("/:id/articles", getUserArticles);
 router.put("/:username/articles/add", addArt);
 
-//Delting articles
+//Deleting articles
 router.delete("/:username/articles/:articleId", deleteArt);
 
 //Login and Logout

@@ -30,9 +30,21 @@ const ArticlesContextProvider = ({ children }) => {
   const deleteArticle = (id) => {
     axios.delete(`http://localhost:8000/users/${user.username}/articles/${id}`);
   };
+  const getAllArticles = async () => {
+    const res = await axios.get("http://localhost:8000/articles");
+    const data = res.data;
+    console.log(data);
+    return data;
+  };
   return (
     <ArticlesContext.Provider
-      value={{ getArticles, articles, addArticle, deleteArticle }}
+      value={{
+        getArticles,
+        articles,
+        addArticle,
+        deleteArticle,
+        getAllArticles,
+      }}
     >
       <>{children}</>
     </ArticlesContext.Provider>

@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 //
 import userRoute from "./routes/user.js";
+import articlesRoute from "./routes/articles.js";
 
 //Init express
 const app = express();
@@ -17,7 +18,7 @@ app.use(cors());
 
 //Setting up routes
 app.use("/users", userRoute);
-
+app.use("/articles", articlesRoute);
 mongoose.connect("mongodb://localhost:27017/articlesdb");
 const connection = mongoose.connection;
 connection.once("open", () => {
