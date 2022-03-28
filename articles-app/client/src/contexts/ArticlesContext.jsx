@@ -44,6 +44,7 @@ const ArticlesContextProvider = ({ children }) => {
         addArticle,
         deleteArticle,
         getAllArticles,
+        setArticles,
       }}
     >
       <>{children}</>

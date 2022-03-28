@@ -25,14 +25,15 @@ const App = () => {
         <Header isOpen={navIsOpen} setIsOpen={setNavIsOpen} />
         <div className={`content ${navIsOpen ? "open" : "closed"}`}>
           <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/:username" element={<Home />} />
-            <Route path="/:username/articles" element={<Articles />} />
             <Route path="/:username/articles/:id" element={<Article />} />
             <Route path="/:username/articles/add" element={<AddArticle />} />
+            <Route path="/:username/articles" element={<Articles />} />
+            <Route path="/:username/all-articles" element={<AllArticles />} />
+            <Route path="/:username" element={<Home />} />
             <Route path="/articles" element={<AllArticles />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Main />} />
           </Routes>
         </div>
       </ThemeProvider>
